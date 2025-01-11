@@ -41,7 +41,16 @@ const styleSrcUrls = [
   'https://fonts.googleapis.com/',
   'https://js.stripe.com/v3/'
 ];
-const connectSrcUrls = ['https://unpkg.com', 'https://tile.openstreetmap.org','https://js.stripe.com/v3/', 'ws://127.0.0.1:54890','ws://127.0.0.1:54016/','ws://127.0.0.1:*'];
+const connectSrcUrls = [
+  'https://unpkg.com',
+  'https://tile.openstreetmap.org',
+  'https://js.stripe.com/v3/',
+  'ws://127.0.0.1:54890',
+  'ws://127.0.0.1:54016/',
+  'ws://127.0.0.1:*',
+  'http://127.0.0.1:3000'
+];
+
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
 //set security http headers
 app.use(
