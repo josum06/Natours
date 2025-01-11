@@ -74,6 +74,9 @@ if( process.env.NODE_ENV ==='development' ){
         app.use(morgan('dev'));
 }
 
+// Enable trust proxy
+app.set('trust proxy', true);
+
 // limit request from same api
 const limiter = rateLimit({
     max:100,
