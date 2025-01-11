@@ -48,6 +48,7 @@ const connectSrcUrls = [
   'ws://127.0.0.1:54890',
   'ws://127.0.0.1:54016/',
   'ws://127.0.0.1:*',
+  'http://127.0.0.1:3000' // Add this line
 ];
 
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
