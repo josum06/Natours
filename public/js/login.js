@@ -3,11 +3,10 @@ import axios from 'axios';
 import { showAlert } from './alerts';
 
 export const login = async(email,password)=>{
-    console.log(email,password);
     try{
         const res = await axios({
             method: 'POST',
-            url: 'http://127.0.0.1:3000/api/v1/users/login',
+            url: '/api/v1/users/login',
             data:{
                 email,
                 password
@@ -32,18 +31,16 @@ export const login = async(email,password)=>{
             showAlert('error', 'No response from server. Check your connection.');
           } else {
             // Other errors
-            console.log(err);
             showAlert('error', err.message);
           }
         }
     };
 
 export const signup = async(name,email,password,passwordConfirm)=>{
-        console.log(email,password);
         try{
             const res = await axios({
                 method: 'POST',
-                url: 'http://127.0.0.1:3000/api/v1/users/signup',
+                url: '/api/v1/users/signup',
                 data:{
                     name,
                     email,
@@ -70,7 +67,6 @@ export const signup = async(name,email,password,passwordConfirm)=>{
                 showAlert('error', 'No response from server. Check your connection.');
               } else {
                 // Other errors
-                console.log(err);
                 showAlert('error', err.message);
               }
             }
@@ -89,7 +85,6 @@ export const logout = async() =>{
      }
     }
     catch(err){
-        console.log(err.response);
         showAlert('error', 'Failed to log out try again');
     }
 }

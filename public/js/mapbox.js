@@ -22,7 +22,6 @@ export const displayMap = (locations) =>{
     // shadowSize: [68, 95],
   });
   const points = [];
-  console.log(locations);
   locations.forEach(location => {
     points.push([location.coordinates[1], location.coordinates[0]]);
     L.marker([location.coordinates[1], location.coordinates[0]], { icon: myIcon })

@@ -7,8 +7,7 @@ const Booking = require('../models/bookingModel')
 exports.getOverview = catchAsync(async(req, res,next) => {
     // Get the tour data from collection
     const tours = await Tour.find();
-    console.log(tours[0].ratingQuantity);
-   
+
 
     // Build template
     res.status(200).render('overview', {

@@ -15,7 +15,6 @@ const handleDuplicateKeyErrorDB = err => {
    const errors =Object.values(err.errors).map(el => el.message);
 
     const value = err.keyValue.name;
-    console.log(value);
     const message = `Duplicate field of ${value} : please use another value`
     return new AppError(message,400);
 }

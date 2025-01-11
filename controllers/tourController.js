@@ -60,7 +60,6 @@ exports.resizeTourImages = catchAsync(async (req,res,next) =>{
 
          req.body.images.push(filename);
     }));
-    console.log(req);
     next();
 });
 
@@ -193,7 +192,7 @@ exports.getDistances = catchAsync(async (req, res, next) => {
     const { latlng, unit } = req.params;
     const [lat, lng] = latlng.split(',');
 
-    console.log({ lat, lng, unit });
+
 
     const multiplier = unit === 'mi' ? 0.000621371 : 0.001;
 
@@ -220,7 +219,6 @@ exports.getDistances = catchAsync(async (req, res, next) => {
         },
     ]);
 
-    console.log('Distances:', distances);
 
     res.status(200).json({
         status: 'success',
