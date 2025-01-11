@@ -48,7 +48,6 @@ const connectSrcUrls = [
   'ws://127.0.0.1:54890',
   'ws://127.0.0.1:54016/',
   'ws://127.0.0.1:*',
-  'http://127.0.0.1:3000'
 ];
 
 const fontSrcUrls = ['fonts.googleapis.com', 'fonts.gstatic.com'];
@@ -57,14 +56,14 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ['https://js.stripe.com/v3/'],
-      connectSrc: ["'self'", "ws://127.0.0.1:*", "ws://localhost:*", ...connectSrcUrls],
+      connectSrc: ["'self'", ...connectSrcUrls],
       scriptSrc: ["'self'", ...scriptSrcUrls],
       styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
       workerSrc: ["'self'", 'blob:'],
       objectSrc: [],
       imgSrc: ["'self'", 'blob:', 'data:', 'https:'],
-      fontSrc: ["'self'", ...fontSrcUrls],
-    },
+      fontSrc: ["'self'", ...fontSrcUrls]
+    }
   })
 );
 
